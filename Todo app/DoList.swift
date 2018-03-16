@@ -8,6 +8,10 @@ class DoList: UITableViewController {
         return Lists.count
     }
     
+    @IBAction func addListButtonPressed(_ sender: Any) {
+        Lists.append("Assignment Two")
+        tableView.reloadData()
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let List = Lists[indexPath.row]
         
@@ -27,7 +31,15 @@ class DoList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(Lists[indexPath.row])
+        
+        performSegue(withIdentifier: "ListTransition", sender: self)
     }
+    
+   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     //   if let destination = segue.destination as? DisplayListViewController {
+            //destination.display.text =
+       // }
+    //}
     
     
     
