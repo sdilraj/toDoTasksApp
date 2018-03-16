@@ -30,6 +30,13 @@ class DoList: UITableViewController {
         
     }
     
+    // selecting rows
+    
+    
+    
+    
+    
+    
     // different height
     /*
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -38,10 +45,16 @@ class DoList: UITableViewController {
     */
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         print(Lists[indexPath.row])
         
         performSegue(withIdentifier: "ListTransition", sender: self)
+        
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        
+
+        
     }
     
    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
