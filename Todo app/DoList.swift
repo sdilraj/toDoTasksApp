@@ -2,15 +2,24 @@ import UIKit
 
 class DoList: UITableViewController {
     
-    var Lists: [String] = ["Homework", "Midterm", "Essay"]
+    var Lists: [String] = ["Due Assignment 2", "Go Workout", "Write Essay", "Drink Coffee", "Fix Clock"]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Lists.count
     }
     
+    
+    @IBOutlet weak var input: UITextField!
     @IBAction func addListButtonPressed(_ sender: Any) {
-        Lists.append("Assignment Two")
+        
+        if(input.text != "")
+        
+        {
+        
+        Lists.append(input.text!)
         tableView.reloadData()
+        }
+        
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let List = Lists[indexPath.row]

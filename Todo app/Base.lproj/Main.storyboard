@@ -38,19 +38,29 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GYK-3B-G5R">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Sk9-px-ywL">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Ygq-F5-s8p">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="to do item" textAlignment="natural" minimumFontSize="17" id="pso-Su-GQY">
+                                <rect key="frame" x="16" y="7" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Item" id="Sk9-px-ywL">
                             <connections>
                                 <action selector="addListButtonPressed:" destination="GKh-um-QM3" id="v52-sb-Tt3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="input" destination="pso-Su-GQY" id="rHn-t3-72s"/>
                         <segue destination="YRM-hT-M55" kind="show" identifier="ListTransition" id="SlO-Zi-PhS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9em-au-YgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490" y="91"/>
+            <point key="canvasLocation" x="-566" y="91"/>
         </scene>
         <!--Diplay List View Controller-->
         <scene sceneID="1nS-Xf-hee">
