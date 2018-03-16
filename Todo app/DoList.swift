@@ -30,11 +30,15 @@ class DoList: UITableViewController {
         
     }
     
-    // selecting rows
     
-    
-    
-    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath:IndexPath)
+    {
+        if editingStyle == UITableViewCellEditingStyle.delete
+        {
+            Lists.remove(at:indexPath.row)
+            tableView.reloadData()
+        }
+    }
     
     
     // different height
@@ -51,19 +55,11 @@ class DoList: UITableViewController {
         
         performSegue(withIdentifier: "ListTransition", sender: self)
         
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark // selecting rows
         
 
         
     }
-    
-   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     //   if let destination = segue.destination as? DisplayListViewController {
-            //destination.display.text =
-       // }
-    //}
-    
-    
     
     
 }
